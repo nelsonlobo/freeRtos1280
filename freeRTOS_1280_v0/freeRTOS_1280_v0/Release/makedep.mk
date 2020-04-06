@@ -16,3 +16,5 @@ freeRTOS\tasks.c
 
 main.c
 
+vers\version.c
+

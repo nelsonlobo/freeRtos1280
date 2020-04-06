@@ -38,7 +38,8 @@ SUBDIRS :=  \
 ../freeRTOS/portable/ \
 ../freeRTOS/portable/GCC/ \
 ../freeRTOS/portable/GCC/ATMega1280/ \
-../freeRTOS/portable/MemMang/
+../freeRTOS/portable/MemMang/ \
+../vers/
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -49,7 +50,8 @@ C_SRCS +=  \
 ../freeRTOS/portable/MemMang/heap_1.c \
 ../freeRTOS/queue.c \
 ../freeRTOS/tasks.c \
-../main.c
+../main.c \
+../vers/version.c
 
 
 PREPROCESSING_SRCS += 
@@ -65,7 +67,8 @@ freeRTOS/portable/GCC/ATMega1280/port.o \
 freeRTOS/portable/MemMang/heap_1.o \
 freeRTOS/queue.o \
 freeRTOS/tasks.o \
-main.o
+main.o \
+vers/version.o
 
 OBJS_AS_ARGS +=  \
 freeRTOS/croutine.o \
@@ -74,7 +77,8 @@ freeRTOS/portable/GCC/ATMega1280/port.o \
 freeRTOS/portable/MemMang/heap_1.o \
 freeRTOS/queue.o \
 freeRTOS/tasks.o \
-main.o
+main.o \
+vers/version.o
 
 C_DEPS +=  \
 freeRTOS/croutine.d \
@@ -83,7 +87,8 @@ freeRTOS/portable/GCC/ATMega1280/port.d \
 freeRTOS/portable/MemMang/heap_1.d \
 freeRTOS/queue.d \
 freeRTOS/tasks.d \
-main.d
+main.d \
+vers/version.d
 
 C_DEPS_AS_ARGS +=  \
 freeRTOS/croutine.d \
@@ -92,7 +97,8 @@ freeRTOS/portable/GCC/ATMega1280/port.d \
 freeRTOS/portable/MemMang/heap_1.d \
 freeRTOS/queue.d \
 freeRTOS/tasks.d \
-main.d
+main.d \
+vers/version.d
 
 OUTPUT_FILE_PATH +=freeRTOS_1280_v0.elf
 
@@ -151,6 +157,13 @@ freeRTOS/tasks.o: ../freeRTOS/tasks.c
 	
 
 ./main.o: .././main.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I".." -I"../freeRTOS/include" -I"../freeRTOS/portable/GCC/ATMega1280"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -Wall -mmcu=atmega1280 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega1280" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+vers/version.o: ../vers/version.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I".." -I"../freeRTOS/include" -I"../freeRTOS/portable/GCC/ATMega1280"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -Wall -mmcu=atmega1280 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega1280" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

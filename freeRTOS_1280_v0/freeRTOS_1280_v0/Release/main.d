@@ -10,7 +10,7 @@ main.d main.o: .././main.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
- .././IO_Macros.h ../freeRTOS/include/FreeRTOS.h \
+ .././vers/version.h ../IO_Macros.h ../freeRTOS/include/FreeRTOS.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
  ../FreeRTOSConfig.h ../freeRTOS/include/projdefs.h \
  ../freeRTOS/include/portable.h \
@@ -40,7 +40,9 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
-.././IO_Macros.h:
+.././vers/version.h:
+
+../IO_Macros.h:
 
 ../freeRTOS/include/FreeRTOS.h:
 

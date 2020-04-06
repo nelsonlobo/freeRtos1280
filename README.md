@@ -46,3 +46,12 @@ ___
 	- vTaskStartScheduler() used to initiate the process of rtos.
 	- TaskHandle_t used to create objects so that we can keep track of individual tasks.
 ___
+
+### Version - v0 (6th April 2020)
+    Written by Nelson Lobo
+	
+- Firmware Updates
+	- Revised the structure of the code into versions where one could call only the specific version to execute a type of code they wish to experiment/learn.
+	- Version #1 has 3 tasks created each running sequentially and controlled using vTaskSuspend and vTaskResume functions.
+	- Each led will blink 6 times before switching to the next one.
+___
